@@ -33,7 +33,7 @@ Serve the repository root over HTTP (service workers require HTTPS or localhost)
 Deploy the repository root as a static site on Vercel or another static host.
 
 ## Checkout configuration
-Set `whatsappNumber` in `data.js` to the verified international business number using digits only (country code included, no plus sign or spaces). Until it is configured, WhatsApp opens with the prepared order message and lets the customer choose a recipient. Confirm product names, prices, availability, images, delivery fees and service coverage before production launch.
+The WhatsApp business number is configured in `data.js` as `2348084678160` (international format, digits only). Product orders and service enquiries open a pre-filled WhatsApp message. Confirm product names, prices, availability, images, delivery fees and service coverage before production launch.
 
 ## Motion and accessibility
 Motion is deliberately limited to a short hero entrance, subtle section reveals, desktop-only add-to-cart image flight, and immediate add-button feedback. Motion uses opacity and transforms, is disabled for reduced-motion preferences, and falls back to instant tap feedback on touch devices. Native cross-document View Transitions are used where supported, with ordinary navigation as fallback.
