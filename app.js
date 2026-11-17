@@ -71,6 +71,28 @@
     },{threshold:.08,rootMargin:"0px 0px -32px 0px"});
   }
 
+  const IMAGE_FALLBACKS = {
+    Plants: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=85",
+    Pots: "https://naturehome.cdn.shoprenter.hu/custom/naturehome/image/cache/w600h600q100/product/allando_termekek2/szarazviragok/kaspo_-_homok_es_kek_nh15574/kaspo_-_homok_es_kek_nh15574_04.jpg.webp?lastmod=1716474558.1723905024",
+    "Garden Care": "https://131288295.cdn6.editmysite.com/uploads/1/3/1/2/131288295/2HA56AG2U3DPVOVKYPPZ2LTY.jpeg",
+    Tools: "https://www.niwaki.com/media/c/h/0/b57a5c597edeea43fac074f3c0670bf1d10f8e18/rc/2500/1668/1/niwaki-gr-pro-s-type-secateurs.jpeg"
+  };
+  function setProductImage(img, product) {
+    img.dataset.fallbackTried = "false";
+    img.src = product.image;
+    img.alt = product.name;
+    img.addEventListener("error", () => {
+      if (img.dataset.fallbackTried === "false") {
+        img.dataset.fallbackTried = "true";
+        img.src = IMAGE_FALLBACKS[product.category] || IMAGE_FALLBACKS.Plants;
+      } else {
+        img.hidden = true;
+        img.alt = "";
+        img.closest(".product-media, .cart-line")?.classList.add("image-unavailable");
+      }
+    });
+  }
+
   function productCard(product) {
     const article = document.createElement("article");
     article.className = "product-card reveal";
@@ -141,7 +163,7 @@
       const qty = cart[product.id]; subtotal += product.price * qty;
       const row = document.createElement("article"); row.className = "cart-line";
       row.innerHTML = '<img alt="" loading="lazy" decoding="async"><div><h2></h2><p class="cart-line-price"></p><div class="quantity-controls"><button class="quantity-btn" type="button" data-step="-1" aria-label="Decrease quantity">−</button><span class="quantity-value" aria-live="polite"></span><button class="quantity-btn" type="button" data-step="1" aria-label="Increase quantity">＋</button><button class="remove-btn" type="button">Remove</button></div></div>';
-      const img = row.querySelector("img"); img.src = product.image; img.alt = product.name;
+      const img = row.querySelector("img"); setProductImage(img, product);
       row.querySelector("h2").textContent = product.name;
       row.querySelector(".cart-line-price").textContent = money(product.price) + " each";
       row.querySelector(".quantity-value").textContent = qty;
