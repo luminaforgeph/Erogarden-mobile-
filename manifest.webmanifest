@@ -1,13 +1,13 @@
 {
   "name": "Erogarden Global",
   "short_name": "Erogarden",
-  "description": "Plants, garden essentials and trusted outdoor services.",
+  "description": "Thoughtfully selected plants, garden essentials and considered outdoor services.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#F9F8F6",
-  "theme_color": "#2C4A3E",
+  "background_color": "#FAF9F6",
+  "theme_color": "#FAF9F6",
   "icons": [
-    {"src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+    {"src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
   ]
 }
