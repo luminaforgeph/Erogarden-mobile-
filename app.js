@@ -10,7 +10,7 @@
     catch { return {}; }
   };
   const validIds = new Set(PRODUCTS.map(p => p.id));
-  const cleanCart = value => Object.fromEntries(Object.entries(value).filter(([id,qty]) => validIds.has(id) && Number.isFinite(Number(qty)) && Number(qty) > 0).map(([id,qty]) => [id,Math.min(99,Math.floor(Number(qty)))]));
+  const cleanCart = value => Object.fromEntries(Object.entries(value).filter(([id,qty]) => validIds.has(id) && Number.isFinite(Number(qty)) && Number(qty) > 0).map(([id,qty]) => [id,Math.max(1,Math.min(99,Math.floor(Number(qty))))]));
   let cart = cleanCart(readObject(KEYS.cart));
   let profile = readObject(KEYS.profile);
   let toastTimer;
@@ -161,7 +161,7 @@
       const enabled = items.length > 0;
       checkout.href = enabled ? checkoutUrl(items,subtotal) : "#";
       checkout.setAttribute("aria-disabled",String(!enabled));
-      checkout.addEventListener("click",event => { if (!enabled) event.preventDefault(); });
+      checkout.onclick = event => { if (!enabled) event.preventDefault(); };
     }
   }
 
