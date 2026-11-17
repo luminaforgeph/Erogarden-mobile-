@@ -1,6 +1,6 @@
-# Erogarden Nigeria Limited
+# Erogardens Nigeria Limited
 
-A mobile-first, four-page storefront and installable PWA designed as the first stage of Erogarden's wider plant and garden-services ecosystem.
+A mobile-first, four-page storefront and installable PWA designed as the first stage of Erogardens's wider plant and garden-services ecosystem.
 
 ## Pages
 - `/` or `index.html` — editorial home and discovery
