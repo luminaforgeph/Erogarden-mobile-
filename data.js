@@ -1,7 +1,7 @@
 /* Erogardens's own product catalogue and future service taxonomy.
    Keep first-party products separate from independent provider listings. */
 window.Erogardens_DATA = Object.freeze({
-  whatsappNumber: "2348084678160",
+  whatsappNumber: "2348036548238",
   products: [
     {id:"monstera",name:"Monstera Deliciosa",category:"Plants",price:18500,tag:"Bestseller",image:"https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=85",description:"A sculptural tropical favourite for bright, indirect light."},
     {id:"snake",name:"Snake Plant",category:"Plants",price:12000,tag:"Easy care",image:"https://images.unsplash.com/photo-1696508902086-2a82cdef9f48?auto=format&fit=crop&w=900&q=85",description:"Resilient, architectural greenery for modern spaces."},
