@@ -1,4 +1,4 @@
-const CACHE_NAME='erogarden-multipage-v4';
+const CACHE_NAME='erogardens-multipage-v4';
 const APP_SHELL=['/','/index.html','/market.html','/cart.html','/profile.html','/styles.css','/data.js','/app.js','/manifest.webmanifest','/assets/icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim()});
