@@ -1,12 +1,12 @@
 (() => {
   "use strict";
-  const DATA = window.EROGARDEN_DATA || {products:[],serviceCategories:[],whatsappNumber:""};
+  const DATA = window.Erogardens_DATA || {products:[],serviceCategories:[],whatsappNumber:""};
   const PRODUCTS = DATA.products;
-  const KEYS = {cart:"erogarden-cart",profile:"erogarden-profile"};
+  const KEYS = {cart:"erogardens-cart",profile:"erogardens-profile"};
   const money = n => new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(n);
   const byId = id => document.getElementById(id);
   const readObject = key => {
-    try { const value = JSON.parse(localStorage.getItem(key) || "{}"); return value && typeof value === "object" && !Array.isArray(value) ? value : {}; }
+    try { let raw = localStorage.getItem(key); if (raw === null) { const legacyKey = key.replace("erogardens", "erogarden"); raw = localStorage.getItem(legacyKey); if (raw !== null) localStorage.setItem(key, raw); } const value = JSON.parse(raw || "{}"); return value && typeof value === "object" && !Array.isArray(value) ? value : {}; }
     catch { return {}; }
   };
   const validIds = new Set(PRODUCTS.map(p => p.id));
@@ -114,7 +114,7 @@
   function checkoutUrl(items,subtotal) {
     const lines = items.map(p => p.name + " — " + cart[p.id] + " × " + money(p.price) + " = " + money(p.price * cart[p.id]));
     const details = [
-      "Hello Erogarden Nigeria Limited, I would like to place an order:",
+      "Hello Erogardens Nigeria Limited, I would like to place an order:",
       "",
       ...lines,
       "",
@@ -217,7 +217,7 @@
     if (!deferredPrompt) return;
     deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; install.classList.remove("visible");
   });
-  window.addEventListener("appinstalled",() => toast("Erogarden added to your home screen"));
+  window.addEventListener("appinstalled",() => toast("Erogardens added to your home screen"));
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
     window.addEventListener("load",() => navigator.serviceWorker.register("/sw.js").catch(error => console.warn("Service worker registration failed:",error)));
   }
