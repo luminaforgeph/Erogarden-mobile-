@@ -1,6 +1,6 @@
-/* Erogarden's own product catalogue and future service taxonomy.
+/* Erogardens's own product catalogue and future service taxonomy.
    Keep first-party products separate from independent provider listings. */
-window.EROGARDEN_DATA = Object.freeze({
+window.Erogardens_DATA = Object.freeze({
   whatsappNumber: "", // Add the verified international number, digits only, before launch.
   products: [
     {id:"monstera",name:"Monstera Deliciosa",category:"Plants",price:18500,tag:"Bestseller",image:"https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=700&q=80",description:"A sculptural tropical favourite for bright, indirect light."},
