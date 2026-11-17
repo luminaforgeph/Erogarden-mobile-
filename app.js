@@ -98,8 +98,7 @@
     article.className = "product-card reveal";
     article.innerHTML = '<div class="product-media"><img loading="lazy" decoding="async" alt=""></div><div class="product-info"><p class="product-category"></p><h2 class="product-name"></h2><p class="product-price"></p><p class="product-description"></p><button class="add-to-cart" type="button">＋ Add to cart</button></div>';
     const img = article.querySelector("img");
-    img.src = product.image; img.alt = product.name;
-    img.addEventListener("error",() => { img.src = "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=700&q=80"; },{once:true});
+    setProductImage(img, product);
     article.querySelector(".product-category").textContent = product.category;
     article.querySelector(".product-name").textContent = product.name;
     article.querySelector(".product-price").textContent = money(product.price);
