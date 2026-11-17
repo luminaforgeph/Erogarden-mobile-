@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2C4A3E">
+  <meta name="description" content="Erogarden Global — shop thoughtfully selected plants, garden essentials and trusted outdoor services.">
+  <title>Erogarden Global — Grow beautifully</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { forest: '#2C4A3E', cream: '#F9F8F6', amber: '#D97706', ink: '#202521', muted: '#737A73' }, fontFamily: { sans: ['DM Sans','sans-serif'], display: ['Playfair Display','serif'] }, boxShadow: { soft: '0 14px 40px rgba(31,52,42,.08)' } } } };
+  </script>
+  <style>
+    :root{color-scheme:light;--forest:#2C4A3E;--cream:#F9F8F6;--amber:#D97706;--ink:#202521}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent}
+    button,a,input,select{touch-action:manipulation}
+    button,a{min-height:44px}
+    .safe-bottom{padding-bottom:max(.5rem,env(safe-area-inset-bottom))}
+    .nav-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:60px;min-height:58px;color:#7b837c;font-size:10px;font-weight:600}
+    .nav-item[aria-current="page"]{color:var(--forest)}
+    .nav-icon{width:21px;height:21px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .chip[aria-pressed="true"]{background:var(--forest);color:white;border-color:var(--forest)}
+    .product-card{background:#fff;border:1px solid #eceee9;overflow:hidden}
+    .product-card img{display:block;width:100%;height:100%;object-fit:cover}
+    .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .hide-scrollbar{scrollbar-width:none}.hide-scrollbar::-webkit-scrollbar{display:none}
+    .toast{transform:translateY(12px);opacity:0;pointer-events:none;transition:all .25s ease}
+    .toast.show{transform:translateY(0);opacity:1}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-40 border-b border-stone-200/80 bg-cream/95 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#home" class="flex min-h-[44px] items-center gap-2" aria-label="Erogarden Global home">
+        <span class="grid h-9 w-9 place-items-center bg-forest text-lg text-white">E</span>
+        <span class="leading-tight"><span class="block font-display text-lg font-semibold tracking-tight text-forest">erogarden</span><span class="block text-[9px] font-bold uppercase tracking-[.24em] text-muted">global</span></span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button id="installBtn" class="hidden min-h-[44px] border border-forest/20 px-3 text-xs font-semibold text-forest">Install app</button>
+        <button id="headerCart" class="relative grid min-h-[44px] min-w-[44px] place-items-center text-forest" aria-label="Open cart">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+          <span id="headerCartCount" class="absolute right-0 top-0 grid h-4 min-w-4 place-items-center bg-amber px-1 text-[9px] font-bold text-white">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="mx-auto max-w-6xl px-4 pb-28">
+    <section class="relative mt-4 overflow-hidden bg-forest text-white">
+      <img class="absolute inset-0 h-full w-full object-cover opacity-25" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=85" alt="" fetchpriority="high">
+      <div class="relative max-w-xl px-6 py-12 sm:px-10 sm:py-16">
+        <p class="mb-4 text-[10px] font-bold uppercase tracking-[.28em] text-amber-300">A greener way to live</p>
+        <h1 class="font-display text-4xl leading-[1.08] tracking-tight sm:text-6xl">Bring your space<br><em class="font-medium text-amber-300">to life.</em></h1>
+        <p class="mt-4 max-w-sm text-sm leading-6 text-white/80">Beautiful plants, considered garden essentials and people who know how to make things grow.</p>
+        <a href="#marketplace" class="mt-7 inline-flex items-center justify-center bg-amber px-6 py-3 text-sm font-bold text-white transition hover:bg-amber-700">Explore the collection <span class="ml-3">↗</span></a>
+      </div>
+      <div class="absolute bottom-4 right-4 hidden border border-white/30 px-3 py-2 text-[9px] uppercase tracking-[.2em] text-white/80 sm:block">Rooted in nature · Made for living</div>
+    </section>
+
+    <section class="py-8" aria-label="Shop by category">
+      <div class="mb-4 flex items-end justify-between"><div><p class="text-[10px] font-bold uppercase tracking-[.2em] text-amber">Curated for you</p><h2 class="mt-1 font-display text-2xl">Find your green</h2></div><a href="#marketplace" class="text-xs font-bold text-forest">View all →</a></div>
+      <div class="hide-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4 pb-1">
+        <button class="category-shortcut min-w-[112px] border border-stone-200 bg-white p-3 text-left" data-category="Plants"><span class="text-2xl">🪴</span><span class="mt-2 block text-xs font-semibold">Plants</span></button>
+        <button class="category-shortcut min-w-[112px] border border-stone-200 bg-white p-3 text-left" data-category="Pots"><span class="text-2xl">🏺</span><span class="mt-2 block text-xs font-semibold">Pots & planters</span></button>
+        <button class="category-shortcut min-w-[112px] border border-stone-200 bg-white p-3 text-left" data-category="Garden Care"><span class="text-2xl">🌱</span><span class="mt-2 block text-xs font-semibold">Garden care</span></button>
+        <button class="category-shortcut min-w-[112px] border border-stone-200 bg-white p-3 text-left" data-category="Tools"><span class="text-2xl">🧤</span><span class="mt-2 block text-xs font-semibold">Tools</span></button>
+      </div>
+    </section>
+
+    <section id="marketplace" class="scroll-mt-24 py-5">
+      <div class="flex items-end justify-between"><div><p class="text-[10px] font-bold uppercase tracking-[.2em] text-amber">The marketplace</p><h2 class="mt-1 font-display text-2xl">A little more nature</h2></div><span class="text-xs text-muted">Thoughtfully selected</span></div>
+      <div class="hide-scrollbar my-4 flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Filter products">
+        <button class="chip border border-stone-300 px-4 text-xs font-semibold" data-filter="All" aria-pressed="true">All</button>
+        <button class="chip border border-stone-300 px-4 text-xs font-semibold" data-filter="Plants" aria-pressed="false">Plants</button>
+        <button class="chip border border-stone-300 px-4 text-xs font-semibold" data-filter="Pots" aria-pressed="false">Pots</button>
+        <button class="chip border border-stone-300 px-4 text-xs font-semibold" data-filter="Garden Care" aria-pressed="false">Garden care</button>
+        <button class="chip border border-stone-300 px-4 text-xs font-semibold" data-filter="Tools" aria-pressed="false">Tools</button>
+      </div>
+      <div id="productGrid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4" aria-live="polite"></div>
+    </section>
+
+    <section id="services" class="scroll-mt-24 py-9">
+      <div class="mb-5"><p class="text-[10px] font-bold uppercase tracking-[.2em] text-amber">Beyond the shop</p><h2 class="mt-1 font-display text-2xl">Let us do the growing</h2><p class="mt-2 max-w-md text-sm leading-6 text-muted">From a single balcony to a complete outdoor space, find the right hands for your project.</p></div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <article class="flex gap-4 border border-stone-200 bg-white p-4"><span class="text-3xl">🌿</span><div><h3 class="font-semibold">Garden design</h3><p class="mt-1 text-xs leading-5 text-muted">Personalised planting plans for homes and businesses.</p><a class="service-link mt-3 inline-flex items-center text-xs font-bold text-forest" href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20I%27m%20interested%20in%20garden%20design." target="_blank" rel="noopener">Enquire now ↗</a></div></article>
+        <article class="flex gap-4 border border-stone-200 bg-white p-4"><span class="text-3xl">🪴</span><div><h3 class="font-semibold">Plant styling</h3><p class="mt-1 text-xs leading-5 text-muted">Bring indoor spaces to life with the right plants.</p><a class="service-link mt-3 inline-flex items-center text-xs font-bold text-forest" href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20I%27m%20interested%20in%20plant%20styling." target="_blank" rel="noopener">Enquire now ↗</a></div></article>
+        <article class="flex gap-4 border border-stone-200 bg-white p-4"><span class="text-3xl">✂️</span><div><h3 class="font-semibold">Garden maintenance</h3><p class="mt-1 text-xs leading-5 text-muted">Ongoing care to keep your outdoor space thriving.</p><a class="service-link mt-3 inline-flex items-center text-xs font-bold text-forest" href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20I%27m%20interested%20in%20garden%20maintenance." target="_blank" rel="noopener">Enquire now ↗</a></div></article>
+        <article class="flex gap-4 border border-stone-200 bg-white p-4"><span class="text-3xl">🌳</span><div><h3 class="font-semibold">Landscape projects</h3><p class="mt-1 text-xs leading-5 text-muted">Thoughtful landscape solutions, planned around you.</p><a class="service-link mt-3 inline-flex items-center text-xs font-bold text-forest" href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20I%27d%20like%20to%20discuss%20a%20landscape%20project." target="_blank" rel="noopener">Enquire now ↗</a></div></article>
+      </div>
+    </section>
+
+    <section class="bg-[#E9EEE8] px-5 py-7 sm:px-8">
+      <p class="text-[10px] font-bold uppercase tracking-[.2em] text-forest">A note from nature</p>
+      <h2 class="mt-2 max-w-lg font-display text-2xl leading-snug text-forest">Good things take root when you give them a little care.</h2>
+      <p class="mt-2 text-sm leading-6 text-forest/75">Need help choosing? Tell us about your space and we’ll help you find a good place to start.</p>
+      <a href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20please%20help%20me%20choose%20the%20right%20plants." target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center bg-forest px-5 py-3 text-sm font-semibold text-white">Talk to our team ↗</a>
+    </section>
+  </main>
+
+  <footer class="border-t border-stone-200 px-4 py-7 pb-28 text-center text-xs text-muted"><span class="font-display text-lg text-forest">erogarden global</span><p class="mt-2">Thoughtfully grown. Beautifully lived.</p><p class="mt-4">© <span id="year"></span> Erogarden Global. All rights reserved.</p></footer>
+
+  <nav class="safe-bottom fixed inset-x-0 bottom-0 z-50 border-t border-stone-200 bg-white/95 px-3 pt-1 backdrop-blur-lg" aria-label="Main navigation">
+    <div class="mx-auto flex max-w-lg items-center justify-around">
+      <a class="nav-item" href="#home" data-nav="home" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+      <a class="nav-item" href="#marketplace" data-nav="marketplace"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 7h16l-1 14H5L4 7Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span>Explore</span></a>
+      <a class="nav-item relative" href="#cart" data-nav="cart"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg><span>Cart <b id="bottomCartCount" class="ml-0.5 text-amber">0</b></span></a>
+      <a class="nav-item" href="#profile" data-nav="profile"><svg class="nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Profile</span></a>
+    </div>
+  </nav>
+
+  <section id="cart" class="fixed inset-0 z-[60] hidden bg-ink/40" aria-label="Shopping cart" aria-modal="true" role="dialog">
+    <div class="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto bg-cream p-5 pb-8 sm:left-auto sm:right-0 sm:top-0 sm:h-full sm:max-h-none sm:w-full sm:max-w-md">
+      <div class="flex items-center justify-between"><div><p class="text-[10px] font-bold uppercase tracking-[.2em] text-amber">Your selection</p><h2 class="font-display text-2xl">Shopping cart</h2></div><button id="closeCart" class="grid min-h-[44px] min-w-[44px] place-items-center text-2xl" aria-label="Close cart">×</button></div>
+      <div id="cartItems" class="mt-5 space-y-3"></div>
+      <div class="mt-6 border-t border-stone-200 pt-4"><div class="flex justify-between text-sm"><span class="text-muted">Subtotal</span><strong id="cartSubtotal">₦0</strong></div><p class="mt-2 text-[11px] leading-5 text-muted">Delivery fees are confirmed after your location is known.</p><a id="checkoutBtn" href="#" class="mt-5 flex min-h-[48px] items-center justify-center bg-forest px-5 text-sm font-bold text-white">Continue on WhatsApp ↗</a></div>
+    </div>
+  </section>
+
+  <section id="profile" class="fixed inset-0 z-[55] hidden bg-ink/40" aria-label="Profile panel" aria-modal="true" role="dialog">
+    <div class="absolute inset-x-0 bottom-0 bg-cream p-6 sm:left-auto sm:right-0 sm:top-0 sm:h-full sm:w-full sm:max-w-md">
+      <div class="flex items-center justify-between"><h2 class="font-display text-2xl">Welcome to Erogarden</h2><button id="closeProfile" class="grid min-h-[44px] min-w-[44px] place-items-center text-2xl" aria-label="Close profile">×</button></div>
+      <p class="mt-3 text-sm leading-6 text-muted">Your greener home starts here. Need product advice, order support or a service quote? Our team is happy to help.</p>
+      <a href="https://wa.me/?text=Hello%20Erogarden%20Global%2C%20I%20need%20some%20assistance." target="_blank" rel="noopener" class="mt-6 flex min-h-[48px] items-center justify-center bg-forest px-5 text-sm font-bold text-white">Contact support ↗</a>
+      <a href="#services" id="profileServices" class="mt-3 flex min-h-[48px] items-center justify-center border border-forest text-sm font-semibold text-forest">Explore our services</a>
+    </div>
+  </section>
+
+  <div id="toast" class="toast fixed bottom-24 left-1/2 z-[70] -translate-x-1/2 bg-ink px-4 py-3 text-xs font-semibold text-white shadow-soft" role="status" aria-live="polite"></div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
