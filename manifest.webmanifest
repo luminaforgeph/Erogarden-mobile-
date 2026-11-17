@@ -1,11 +1,18 @@
 {
-  "name": "Erogarden Global",
+  "name": "Erogarden Nigeria Limited",
   "short_name": "Erogarden",
   "description": "Thoughtfully selected plants, garden essentials and considered outdoor services.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#FAF9F6",
-  "theme_color": "#FAF9F6",
-  "icons": [{"src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+  "background_color": "#F9F8F6",
+  "theme_color": "#2C4A3E",
+  "icons": [
+    {
+      "src": "/assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
