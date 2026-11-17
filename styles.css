@@ -17,7 +17,7 @@ main{max-width:1280px;margin:auto;padding-bottom:2rem}.eyebrow,.section-kicker{c
 @media(min-width:1024px){.header-inner,.footer-inner{padding-left:5vw;padding-right:5vw}.hero-copy{padding-left:5vw}.section,.market-intro,.page-heading,.content-section{padding-left:5vw;padding-right:5vw}.category-strip{padding-left:5vw;padding-right:5vw}.philosophy-copy{padding-left:5vw}.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.js-motion .reveal{opacity:1;transform:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
 
-/* Erogarden motion layer: restrained entrance, immediate commerce feedback. */
+/* Erogardens motion layer: restrained entrance, immediate commerce feedback. */
 .motion-ready .hero-copy > *{animation:hero-enter .58s cubic-bezier(.2,.7,.2,1) both}
 .motion-ready .hero-copy > *:nth-child(2){animation-delay:.06s}
 .motion-ready .hero-copy > *:nth-child(3){animation-delay:.12s}
